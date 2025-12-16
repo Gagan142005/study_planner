@@ -7,25 +7,28 @@ export default function TaskForm({ addTask }) {
 
   const submit = (e) => {
     e.preventDefault();
-    console.log("FORM SUBMITTED", title); // 👈 ADD THIS
 
     if (!title.trim()) return;
 
-    addTask({ title });
+    addTask({ title, completed: false }); // add completed field
     setTitle("");
   };
 
   return (
-    <form onSubmit={submit} className="card task-form">
-      <h3>Add Task</h3>
-
+    <form onSubmit={submit} className="card task-form p-4 mb-4 border rounded shadow">
+      <h3 className="text-lg font-semibold mb-2">Add Task</h3>
       <input
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Enter task"
+        className="w-full p-2 border rounded mb-2"
       />
-
-      <button type="submit">Add</button>
+      <button
+        type="submit"
+        className="bg-blue-500 text-white p-2 rounded hover:bg-blue-600"
+      >
+        Add
+      </button>
     </form>
   );
 }
