@@ -18,21 +18,34 @@ export default function Planner() {
       const snapshot = await getDocs(
         collection(db, "users", user.uid, "tasks")
       );
-      setTasks(snapshot.docs.map((doc) => doc.data()));
+
+      setTasks(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }))
+      );
     };
 
     loadTasks();
   }, [user]);
 
   const addTask = async (task) => {
-    await addDoc(collection(db, "users", user.uid, "tasks"), task);
-    setTasks([...tasks, task]);
+    const docRef = await addDoc(
+      collection(db, "users", user.uid, "tasks"),
+      task
+    );
+
+    setTasks((prev) => [
+      ...prev,
+      { id: docRef.id, ...task },
+    ]);
   };
 
   if (!user) return <p>Please login first.</p>;
 
   return (
-    <div>
+    <div className="container">
       <h2>📅 My Study Planner</h2>
       <TaskForm addTask={addTask} />
       <TaskList tasks={tasks} />

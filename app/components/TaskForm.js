@@ -7,19 +7,25 @@ export default function TaskForm({ addTask }) {
 
   const submit = (e) => {
     e.preventDefault();
-    if (!title) return;
+    console.log("FORM SUBMITTED", title); // 👈 ADD THIS
+
+    if (!title.trim()) return;
+
     addTask({ title });
     setTitle("");
   };
 
   return (
-    <form onSubmit={submit} className="card">
+    <form onSubmit={submit} className="card task-form">
+      <h3>Add Task</h3>
+
       <input
-        placeholder="New study task"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        placeholder="Enter task"
       />
-      <button>Add</button>
+
+      <button type="submit">Add</button>
     </form>
   );
 }

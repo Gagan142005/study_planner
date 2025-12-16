@@ -1,30 +1,140 @@
+/* 🌈 Global Styles */
 body {
-  font-family: Arial, sans-serif;
-  background: #f4f4f4;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   margin: 0;
+  min-height: 100vh;
 }
 
+/* 📦 Main Container */
 .container {
-  padding: 20px;
+  padding: 30px;
+  max-width: 1000px;
+  margin: auto;
 }
 
+/* 🧭 Navbar */
 .navbar {
-  background: #333;
-  padding: 10px;
+  background: white;
+  padding: 15px 30px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 0 0 12px 12px;
 }
 
+/* 🔘 Navbar Buttons & Links */
 .navbar a,
 .navbar button {
-  color: white;
-  margin-right: 10px;
-  background: none;
+  font-size: 16px;
+  font-weight: 600;
+  padding: 10px 18px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #4a4a4a;
+  background: #f0f2ff;
   border: none;
   cursor: pointer;
+  transition: all 0.3s ease;
 }
 
+.navbar a:hover,
+.navbar button:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* 🃏 Card Style */
 .card {
   background: white;
-  padding: 15px;
+  padding: 25px;
+  margin-top: 25px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* 📝 Inputs */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+}
+
+/* 🔵 Buttons */
+button {
   margin-top: 15px;
-  border-radius: 5px;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: none;
+  background: #667eea;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+button:hover {
+  background: #5a67d8;
+}
+
+/* 📋 Task List */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  background: #f5f7ff;
+  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+/* ➕ Add Task Form Styling */
+.task-form {
+  background: linear-gradient(135deg, #43cea2, #185a9d);
+  color: white;
+}
+
+.task-form h3 {
+  margin-top: 0;
+}
+
+.task-form input {
+  width: 100%;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-size: 16px;
+}
+
+.task-form button {
+  background: #ffdd57;
+  color: #333;
+  font-weight: bold;
+}
+
+.task-form button:hover {
+  background: #ffd633;
+}
+
+/* 📋 Task List Styling */
+.task-list ul {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  background: #f5f7ff;
+  padding: 12px;
+  margin-bottom: 10px;
+  border-radius: 8px;
+  font-size: 16px;
 }
